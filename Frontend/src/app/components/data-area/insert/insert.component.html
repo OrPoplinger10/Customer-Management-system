@@ -1,0 +1,23 @@
+<div>
+
+<h1>Add task</h1>
+
+<form (ngSubmit)="send()" ngNativeValidate>
+
+    <label>Customer: </label>
+    <select name="customerId" [(ngModel)]="task.customerId" required>
+        <option disabled selected value="">Select Customer...</option>
+        <option *ngFor="let c of customers" [value]="c.customerId">{{c.name}}</option>
+    </select>
+
+    <label>Task Description: </label>
+    <input type ="text" name="taskDescription" [(ngModel)]="task.taskDescription" required maxlength="500">
+
+    <label>Date: </label>
+    <input type ="date" name="date" [(ngModel)]="task.date" required >
+
+    <button>Add</button>
+
+</form>
+
+</div>
